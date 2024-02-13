@@ -18,8 +18,7 @@ steps:
            '--display-name=ci-cd-bike-share-model-vertex-ai',
            '--artifact-uri=gs://model-collections'
            '--project=sublime-state-413617',
-           '--region=us-central1'
-    ]
+           '--region=us-central1']
 
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Fetch Model Id'
