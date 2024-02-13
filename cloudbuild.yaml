@@ -12,11 +12,11 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     id:  'Upload Model'
-    args: ['ai','model','upload',
+    args: ['ai','models','upload',
            '--contain-image-uri=us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest',
            '--description=ci-cd-bike-model',
            '--display-name=ci-cd-bike-share-model-vertex-ai',
-           '--artifact-uri=gs://model-collections',
+           '--artifact-uri=gs://model-collections/',
            '--project=sublime-state-413617',
            '--region=us-central1']
 
