@@ -22,6 +22,7 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Fetch Model Id'
+    entrypoint: 'bash'
     args: ['-c', 'gcloud ai models list --region=us-central1 --project=sublime-state-413617 --format="get(MODEL_ID)" --sort-by="createTime" --limit=1 > /workspace/model_id.txt']
 
   - name: 'gcr.io/cloud-builders/gcloud'
