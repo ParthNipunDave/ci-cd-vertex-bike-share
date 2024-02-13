@@ -13,7 +13,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     id:  'Upload Model'
     args: ['ai','models','upload',
-           '--container-image-uri=us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest',
+           '--container-image-uri=us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-2:latest',
            '--description=ci-cd-bike-model',
            '--display-name=ci-cd-bike-share-model-vertex-ai',
            '--artifact-uri=gs://model-collections/',
@@ -28,7 +28,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Create Endpoint'
     entrypoint: 'bash'
-    args: ['-c', 'gcloud beta ai endpoints create --display-name=ci-cd-bikeshare-model-endpoint --format="get(name)" --region=us-central1 --project=sublime-state-413617 > /workspace/endpoint_id.txt']
+    args: ['-c', 'gcloud beta ai endpoints create --display-name=ci-cd-bike-share-model-endpoint --format="get(name)" --region=us-central1 --project=sublime-state-413617 > /workspace/endpoint_id.txt']
 
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Deploy Model Endpoint'
