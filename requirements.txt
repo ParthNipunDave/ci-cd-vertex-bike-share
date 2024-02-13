@@ -1,0 +1,12 @@
+pickleshare
+scikit-learn
+gunicorn
+pandas
+numpy
+flask
+pytest
+app
+google-cloud-bigquery
+google==3.0.0
+google-cloud-storage
+pandas_gbq
